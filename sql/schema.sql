@@ -1,0 +1,21 @@
+CREATE TABLE payment_transactions (
+    transaction_id VARCHAR(30) PRIMARY KEY,
+    timestamp TIMESTAMP,
+    transaction_date DATE,
+    amount DECIMAL(14,2),
+    merchant_category VARCHAR(50),
+    transaction_type VARCHAR(30),
+    city VARCHAR(50),
+    country VARCHAR(50),
+    channel VARCHAR(30),
+    device_type VARCHAR(30),
+    is_international INT,
+    failed_attempts INT,
+    is_fraud INT,
+    hour INT,
+    day_of_week VARCHAR(15),
+    month VARCHAR(7),
+    is_night INT,
+    anomaly_flag INT,
+    anomaly_score DECIMAL(12,6)
+);
