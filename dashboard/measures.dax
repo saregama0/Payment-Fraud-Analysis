@@ -1,0 +1,38 @@
+-- Create these measures after importing data/processed/fraud_analysis_data.csv
+Total Transactions = COUNTROWS(payment_transactions)
+
+Total Transaction Value = SUM(payment_transactions[amount])
+
+Fraud Transactions = CALCULATE(
+    COUNTROWS(payment_transactions),
+    payment_transactions[is_fraud] = 1
+)
+
+Fraud Rate = DIVIDE(
+    [Fraud Transactions],
+    [Total Transactions],
+    0
+)
+
+Fraud Value = CALCULATE(
+    [Total Transaction Value],
+    payment_transactions[is_fraud] = 1
+)
+
+Average Transaction Amount = AVERAGE(payment_transactions[amount])
+
+Suspicious Transactions = CALCULATE(
+    COUNTROWS(payment_transactions),
+    payment_transactions[anomaly_flag] = 1
+)
+
+Suspicious Value = CALCULATE(
+    [Total Transaction Value],
+    payment_transactions[anomaly_flag] = 1
+)
+
+Fraud Value Rate = DIVIDE(
+    [Fraud Value],
+    [Total Transaction Value],
+    0
+)
