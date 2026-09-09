@@ -1,0 +1,10 @@
+{
+  "total_transactions": 5000,
+  "total_transaction_value": 7771975.74,
+  "fraud_transactions": 225,
+  "fraud_rate_pct": 4.5,
+  "fraud_value": 389590.94000000006,
+  "anomalies": 250,
+  "date_min": "2026-01-01",
+  "date_max": "2026-06-30"
+}
